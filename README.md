@@ -3,6 +3,8 @@ frontend-nanodegree-arcade-game
 
 Steps Required to Run and Play the Application:
 
+^ Launch the game by double clicking the index.html file
+
 * Use the Arrow Keys to move your character on the Game Board
 	Left arrow: Moves your character one square to the left
 	Right arrow: Moves your character one square to the right

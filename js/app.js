@@ -8,16 +8,14 @@ var Enemy = function(x, y, v) {
 	this.x = x;
 	this.y = y;
 	this.v = v;
-	this.w = 101;
-	this.h = 83;
+	this.w = 70;
+	this.h = 70;
     this.sprite = 'images/enemy-bug.png';
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-	var rectWidth = 101;
-	var rectHeight = 50;
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -56,10 +54,10 @@ var Player = function() {
 	this.y = 375;
 	this.dx = 100;
 	this.dy = 80;
-	this.w = 101;
-	this.h = 83;
+	this.w = 70;
+	this.h = 70;
 	this.sprite = 'images/char-boy.png';
-}
+};
 
 Player.prototype.update = function(dt) {
 
@@ -99,7 +97,7 @@ Player.prototype.handleInput = function(allowedKeys) {
 		if(this.y > 400) {
 			this.y = 375;
 		}
-}	
+}
 
 Player.prototype.reset = function() {
 	this.x = 200; 
@@ -110,12 +108,11 @@ Player.prototype.reset = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-var enemyOne = new Enemy(0,60,60);
-var enemyTwo = new Enemy(0,140,30);
-var enemyThree = new Enemy(0,220,120);
-allEnemies.push(enemyOne);
-allEnemies.push(enemyTwo);
-allEnemies.push(enemyThree);
+
+for(var i=0; i< 3; i++) {
+	allEnemies.push(new Enemy(0, 60+80*i,30+30*i));
+}
+
 var player = new Player();
 
 // This listens for key presses and sends the keys to your
